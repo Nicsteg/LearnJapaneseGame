@@ -1,30 +1,24 @@
-import React, { useState } from 'react';
-import SentenceDisplay from './components/SentenceDisplay';
-import TranslationInput from './components/TranslationInput';
-import ScoreDisplay from './components/ScoreDisplay';
-
-// Sample sentence
-const englishSentence = "How are you today?";
+// src/App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer';
+import Home from './pages/Home.jsx';
+import Game from './pages/Game';
+import About from './pages/About';
+import './App.css';
 
 const App = () => {
-  const [score, setScore] = useState(0);
-
-  // Function to grade the translation
-  const gradeTranslation = (userTranslation) => {
-    const correctTranslation = "今日は元気ですか?"; // Correct translation
-    if (userTranslation === correctTranslation) {
-      setScore(score + 1);  // Increment score for a correct answer
-    } else {
-      alert("Incorrect translation, try again!");
-    }
-  };
-
   return (
-    <div>
-      <SentenceDisplay sentence={englishSentence} />
-      <TranslationInput onSubmit={gradeTranslation} />
-      <ScoreDisplay score={score} />
-    </div>
+    <Router>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/game" element={<Game />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </main>
+      <Footer />
+    </Router>
   );
 };
 
