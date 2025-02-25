@@ -1,5 +1,3 @@
-import React from 'react';  // Import React
-import ReactDOM from 'react-dom/client';  // Import ReactDOM if needed for rendering
 
 function App() {
   return (
