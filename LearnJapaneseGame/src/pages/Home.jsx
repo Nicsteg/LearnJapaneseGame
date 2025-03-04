@@ -14,8 +14,6 @@ const Home = () => {
           Ready to begin? Let us dive into learning!
         </p>
       </div>
-      <button className="bg-sky-500 hover:bg-sky-700 ...">Save changes</button>
-
     </div>
   );
 };
